@@ -1,0 +1,42 @@
+# The following is a generalised instruction for freezing a .py file and generating an executable file on Windows.
+# Courtesy of Nicholas Barker's Python GPT.
+
+
+#         Step 1: Install PyInstaller
+# Before proceeding, ensure PyInstaller is installed. Open your command prompt or terminal and run:
+#                 pip install pyinstaller
+
+#         Step 2: Your Python Script
+# Here's a simple Python script example. Save this as script.py or any other name you prefer.
+#                 script.py content:
+#                         print("Hello, World!")
+
+#         Step 3: Navigate to Your Script's Directory
+# Use the command prompt or terminal to navigate to the directory containing your script. Use the cd command:
+#                 cd path\to\your\script
+# Make sure to replace path\to\your\script with the actual path to where your script is located.
+
+#         Step 4: Run PyInstaller
+# Run PyInstaller with your script file as an argument to generate an executable:
+#                 pyinstaller --onefile script.py
+#
+# The --onefile flag tells PyInstaller to bundle everything into a single executable file.
+
+#         Step 5: Locate Your Executable
+# After PyInstaller finishes, you'll find your executable in the dist directory inside your script's directory. 
+# The executable will have the same name as your script (e.g., script.exe on Windows).
+
+#         Optional Flags:
+# - No Console Window: If creating a GUI application and you want to suppress the console window, use --noconsole or --windowed flag.
+#                 pyinstaller --onefile --noconsole script.py
+
+# - Adding an Icon: To add an icon to your executable, use the --icon=your_icon.ico option. Ensure you have an .ico file.
+#                 pyinstaller --onefile --icon=your_icon.ico script.py
+
+#         Notes:
+# - This guide assumes working within a Windows environment, but the steps are similar for macOS and Linux.
+# - If your script relies on external files (e.g., images, data files), you might need to configure PyInstaller to include these 
+#   files in the executable. This can involve creating a .spec file or using the --add-data option.
+# - Testing the executable on a system without Python installed is recommended to ensure it runs as expected.
+
+# By following these steps, you can convert most Python scripts into standalone executable files for distribution.
